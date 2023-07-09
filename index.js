@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
 const button = document.querySelector(".btn");
 const img = document.querySelector(".photo");
 
+console.log(button)
+
 async function imgAtPageChargement() {
     try {
         const response = await fetch('https://cataas.com/cat');
@@ -10,6 +12,9 @@ async function imgAtPageChargement() {
     } catch (error) {
         console.log(error);
     }
+    
+    button.textContent = button.textContent.toUpperCase()
+
 } imgAtPageChargement();
 
     console.log("Bonjour, monde");
@@ -24,8 +29,10 @@ async function imgAtPageChargement() {
 
             console.log(data);
             img.src = data;
+
         } catch (error) {
             console.log(error);
         }
     });
 });
+
